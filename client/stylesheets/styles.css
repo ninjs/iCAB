@@ -1,0 +1,291 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #333;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #fff;
+  text-shadow: none; /* Prevent inheritence from `body` */
+  background-color: #333;
+  border: 1px solid #333;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #f3f3f3;
+}
+body {
+  color: #fff;
+  text-align: center;
+  /*text-shadow: 0 1px 3px rgba(255,255,255,.5);*/
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+
+
+/*
+ * Header
+ */
+.navbar-brand {
+  color: #333 !important;
+}
+
+.navbar-nav > li {
+  margin-right: 20px;
+  display: inline-block;
+}
+.navbar-nav > li + li {
+  margin-right: 20px;
+}
+.navbar-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; /* IE8 proofing */
+  color: rgba(100,100,100,.9);
+  border-bottom: 2px solid transparent;
+}
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #a9a9a9;
+  border-bottom-color: rgba(0,0,0,.25);
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  background-color: transparent !important;
+  color: #333;
+  border-bottom-color: #333;
+}
+
+@media (min-width: 768px) {
+  .masthead-brand {
+    float: left;
+  }
+  .masthead-nav {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+footer > .container > p {
+  color: #a0a0a0;
+}
+
+/*
+ * Affix and center
+ */
+
+@media (min-width: 768px) {
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 80%;
+  }
+}
+
+/*CUSTOM*/
+
+.loader{
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect{
+  fill: #333;
+}
+
+.inner > .cover-heading, .inner > .lead {
+  color: #333;
+}
+
+.container {
+    width: 900px;
+    margin: 30px auto 30px;
+}
+
+.list-group {
+    border-radius: 10px !important;
+    overflow: hidden;
+    border: 0;
+    background-image: url(../img/paper2.png);
+}
+
+a.list-group-item {
+  color: #333;
+  background-image: url(../img/paper2.png);
+}
+
+.last-name {
+  font-weight: bold !important;
+}
+
+.list-group-item {
+  color: $333;
+  background-image: url(../img/paper2.png);
+}
+
+.main {
+    border: 1px solid #222;
+    background: #333;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.main > .row {
+  padding: 30px;
+}
+
+.secondary {
+    border: 1px solid #222;
+    background-image: url(../img/paper.png);
+    padding: 10px;
+    color: #333;
+    border-radius: 10px;
+}
+
+.nav-pills a:hover {
+    color: #333;
+}
+
+.searchbox {
+  margin-bottom: 5px;
+  border-radius: 20px;
+}
+
+.img-rounded {
+  margin: 0px;
+  float: left;
+  height: 60px;
+}
+
+form {
+  margin: 50px auto 0 auto;
+  width: 80%;
+}
+
+.form-group {
+  margin: 0 auto 15px auto;
+  max-width: 60%;
+}
+
+.form-group > input {
+  background-color: transparent;
+  color: #666;
+  font-weight: bold;
+  border-radius: none;
+  border: 3px solid #ccc;
+}
+
+label {
+  float: left;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.form-horizontal {
+  padding-left: 70px;
+  text-align: left;
+  width: 90%;
+}
+.form-horizontal > .form-group > label {
+  font-size: 14px;
+  float: none;
+}
+.form-horizontal > .form-group > p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-horizontal > .row > .form-group {
+  margin-right: 5px;
+}
+
+.form-horizontal > .row > .form-group > label {
+  font-size: 14px;
+  float: none;
+}
+.form-horizontal > .row > .form-group > p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+

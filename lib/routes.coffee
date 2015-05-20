@@ -1,31 +1,3 @@
-Router.configure
-  layoutTemplate: "layout"
-
-Router.route '/',
-  name: 'home' 
-  action: ->
-    if Meteor.user()
-      @render 'home'
-    else
-      @render 'signIn'
-
-Router.route '/account',
-  name: 'account'
-  action: ->
-    @render 'account'
-
-Router.route '/contacts',
-  name: 'contacts'
-  action: ->
-    @render 'contacts'
-
-Router.route '/contacts/:contactid',
-  name: 'contact'
-  data: ->
-    Contacts.findOne _id: @params.contactid
-  action: ->
-    @render 'contact'
-
 requireLogin = ->
   if !Meteor.user()
     if Meteor.loggingIn()
@@ -34,6 +6,20 @@ requireLogin = ->
       @render 'signIn'
   else
     @next()
+
+Router.configure
+  layoutTemplate: "layout"
+
+Router.onBeforeAction requireLogin,
+  except: ['home']
+
+Router.route '/',
+  name: 'home' 
+  action: ->
+    if Meteor.user()
+      @render 'contacts'
+    else
+      @render 'signIn'
 
 Router.route '/signout',
   name: 'signOut'

@@ -17,3 +17,5 @@ momentjs:moment
 aldeed:autoform
 twbs:bootstrap
 chrismbeckett:toastr
+bigdsk:inputmask
+fortawesome:fontawesome

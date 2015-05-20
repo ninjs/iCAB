@@ -1,0 +1,64 @@
+<template name='layout'>
+  <head>
+    <title>iCAB</title>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">iCentris Address Book</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="#">Home</a></li>
+              {{#if signedIn}}
+              <li><a href="{{pathFor route='signOut'}}">Sign Out</a></li>
+              {{/if}}
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          {{#if signedIn}}
+          <div class="container">
+            <section class="main">
+              {{> yield}}
+            </section>
+
+          </div>
+          {{else}}
+
+          <div class="inner cover">
+
+           {{> yield}}
+         </div>
+         {{/if}}
+         <footer class="footer">
+          <div class="container">
+            <p>Created for <a href="http://icentris.com">iCentris</a>, by <a href="mailto:loganm1881@gmail.com?Subject=Great%20Work!">Logan McPhail</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</template>
+
