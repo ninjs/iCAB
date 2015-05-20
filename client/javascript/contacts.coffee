@@ -72,6 +72,7 @@ Template.addContact.events
       toastr.warning('Please add a first and last name!')
     else
       Contacts.insert(obj)
+      Session.set 'isAdding', false
 
 Template.activeContact.events
   'click .edit': (e) ->
