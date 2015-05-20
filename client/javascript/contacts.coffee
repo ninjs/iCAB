@@ -60,6 +60,7 @@ Template.contacts.helpers
 
 Template.addContact.events
   'click .submit': (e) ->
+    e.preventDefault()
     form = $('.contact-form')
     inputs = form.find('input')
     obj = {}
@@ -67,7 +68,10 @@ Template.addContact.events
       value = field.value
       id = field.id
       obj[id] = value
-    Contacts.insert(obj)
+    if obj['firstName'] == '' || obj['lastName'] == ''
+      toastr.warning('Please add a first and last name!')
+    else
+      Contacts.insert(obj)
 
 Template.activeContact.events
   'click .edit': (e) ->
@@ -108,6 +112,7 @@ Template.contacts.events
     Session.set "activeContact", @_id
   'click .add-contact': (e) ->
     e.preventDefault()
+    Session.set "activeContact", null
     Session.set "isAdding", true
   'keyup input.searchbox': (e) ->
     if e.currentTarget.value isnt ''
@@ -115,3 +120,8 @@ Template.contacts.events
     else
       Session.set "isSearching", false
     Session.set "search-query", e.currentTarget.value
+
+ # --- CUSTOM -----
+ UI.registerHelper 'active', (context) ->
+  if context == Session.get 'activeContact'
+    return true

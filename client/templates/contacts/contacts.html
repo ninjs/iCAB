@@ -5,7 +5,7 @@
       <div id="contact-list" class="list-group">
         {{#if isSearching}}
         {{#each searchResults.results}}
-        <a href="" class="list-group-item">
+        <a href="" class="list-group-item {{#if active _id}}active{{/if}}">
         {{#if favorite}}<i class="fa fa-star"></i>{{/if}}
         {{firstName}} 
         <span class="last-name">{{lastName}}</span></a>
@@ -13,7 +13,7 @@
         {{else}}
         <a href="" class="add-contact">+ Add Contact</a>
         {{#each contacts}}
-        <a href="" class="list-group-item">
+        <a href="" class="list-group-item {{#if active _id}}active{{/if}}">
         {{#if favorite}}<i class="fa fa-star"></i>{{/if}}
         {{firstName}} 
         <span class="last-name">{{lastName}}</span></a>

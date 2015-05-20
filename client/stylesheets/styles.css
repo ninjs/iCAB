@@ -192,6 +192,12 @@ a.list-group-item {
   background-image: url(../img/paper2.png);
 }
 
+a.list-group-item:hover, a.list-group-item.active {
+  color: #fff;
+  background: #337ab7;
+  border: 1px solid #337ab7;
+}
+
 .last-name {
   font-weight: bold !important;
 }
